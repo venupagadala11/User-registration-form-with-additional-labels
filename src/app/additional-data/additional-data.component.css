@@ -1,0 +1,41 @@
+.container
+{
+    border:1px solid black;
+    /* height:100px; */
+    width:500px;
+    border-radius: 10px;
+   
+    align-items: center;
+    
+}
+.dataLabel
+{
+    display: flex;
+    justify-content: space-around;
+}
+.dropDownStyle
+{
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    padding:10px 0px;
+}
+.alert-red
+{
+    color:red;
+    text-align: center;
+    padding-top:10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.additional-data
+{
+    
+    align-items: center;
+    padding-top: 20px;
+    
+}
+.dataDisplay
+{
+    padding-left:45px;
+}

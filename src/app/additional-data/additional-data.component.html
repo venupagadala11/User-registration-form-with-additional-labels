@@ -1,0 +1,47 @@
+
+<div class="container">
+
+    <!-- form group -->
+    <form  class="additional-data" [formGroup]="additionalDataValidation"  >
+
+        <div class="dataLabel">
+           <div><label for="dataLabel">Additional data label:  </label></div>
+            <div><input type="text" id="dataLabel" formControlName="additionalDataLabel" (keyup.enter)="sendData()"></div>
+        </div>
+
+        <div class="dropDownStyle">
+
+            <!-- form conrol for label data option  -->
+            <div>
+                <select class="Drop-Down-list" formControlName="dropDownoptinalType">
+                    <option [value]="'string'" selected>string</option>
+                    <option [value]="'number'">number</option>
+                    <option [value]="'boolean'">boolean</option>
+                    <option [value]="'hexa-decimal'">Hexa-Decimal</option>
+                    <option [value]="'binary'">Binary</option>
+                </select>
+            </div>
+        
+
+        <div>
+            <!-- form control for dropdown  -->
+            <!-- <div class="styleLabel"> -->
+                <label>Additional-Data: </label>
+                <input type="text" placeholder="enter Additional-Data" formControlName="dropDownData" (keyup.enter)="labelDataToDisplay()"/>
+            <!-- </div> -->
+        </div>
+    </div>
+    <!-- validating both the label type and label data
+    in case of mismatching of data show error message -->
+    <div *ngIf="!valid" class="alert-red">Enter selected option </div>
+        
+    <div class="dataDisplay">Additional data label: {{dataLabel}}</div>
+    <div class="dataDisplay">Additional data : {{labelData}}</div>
+    </form>
+    
+
+    <!-- validating the common component and send invalid msg to the user -->
+    
+</div>
+
+

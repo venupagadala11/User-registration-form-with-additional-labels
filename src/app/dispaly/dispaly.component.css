@@ -1,0 +1,50 @@
+h3{
+    text-align: center;
+}
+.user-details-container
+{
+    display: flex;
+    justify-content: center;
+    padding-top:20px;
+}
+
+.strong
+{
+    font-weight: 500;
+    padding-bottom: 15px;
+    width:200px;
+}
+
+.display-data{
+    display: flex;
+   
+}
+ .display-data div
+{
+display: flex;
+/* justify-content: space-between; */
+min-width:50px;
+}
+ .main
+{
+    display: flex;
+    justify-content: center;
+
+} 
+.generalInfo{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border:1px solid ;
+    padding:0px 30px;
+}
+.generalInfo div{
+    margin-top: 10px;
+}
+.additionalInfo{
+    display: flex;
+    
+    flex-direction: column;
+    border:1px solid;
+    padding: 0px 30px;
+}

@@ -1,0 +1,114 @@
+
+
+<h2>Registration Form</h2>
+<div class="main">   
+    <div class="box">
+
+      <!-- form group with different form controls amd validations to the FormsControls -->
+          <form class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+            <!-- form conrols for first name -->
+            <div>
+              <label for="first-name">First Name: </label>
+              <input id="first-name" type="text" formControlName="firstName" placeholder="Enter your firstname" >
+            </div>
+              <span class="alert-red" *ngIf="firstName && firstName.errors?.['required']">
+                Enter input
+              </span>
+              <span class="alert-red" *ngIf="firstName && firstName.errors?.['minlength'] ">
+                Enter at least 3 char
+              </span>
+              <span class="alert-red" *ngIf="firstName && firstName.errors?.['maxlength'] ">
+                Enter below 256 char
+              </span>
+              <span class="alert-red" *ngIf="firstName && firstName.errors?.['pattern'] ">
+                please enter alphabets
+              </span>
+  
+            <!-- form control for last name and validating the input -->
+            <div>
+              <label for="last-name">Last Name: </label>
+              <input id="last-name" type="text" formControlName="lastName" placeholder="Enter your Lastname">
+            </div>
+            <span class="alert-red" *ngIf="lastName && lastName.errors?.['required']">
+              Enter input
+            </span>
+            <span class="alert-red" *ngIf="lastName && lastName.errors?.['minlength'] ">
+              Enter at least 3 char
+            </span>
+            <span class="alert-red" *ngIf="lastName && lastName.errors?.['maxlength']">
+              Enter below 256 char
+            </span>
+            <span class="alert-red" *ngIf="lastName && lastName.errors?.['pattern'] ">
+                please enter alphabets
+              </span>
+            
+            <!-- form control for age and validating the input  -->
+            <div>
+              <label for="age">age: </label>
+              <input id="age" type="text"  formControlName="age" placeholder="Enter your age">
+            </div>
+            <span class="alert-red" *ngIf="age && age.errors?.['required'] && age.touched">
+              Enter input
+            </span>
+            <span class="alert-red" *ngIf="age && age.errors?.['max']">
+              Please enter digits
+            </span>
+            <span class="alert-red" *ngIf="age && age.errors?.['pattern']">
+              Enter  valid age
+            </span>
+  
+            <!-- form control for mobile number and validating the input-->
+            <div>
+              <label for="mobile">Mobile Number: </label>
+              <input id="mobile" type="text"  formControlName="mobileNumber" placeholder="Enter your mobile number">
+            </div>
+              <span *ngIf="mobileNumber && mobileNumber.invalid && mobileNumber.touched" class="alert-red">
+                Invalid mobile number
+            </span>
+            <span *ngIf="mobileNumber && mobileNumber.errors?.['pattern']" class="alert-red">
+                please enter digits
+            </span>
+
+  
+              <!-- form control for email and validating the input-->
+            <div>
+              <label for="email" >Email: </label>
+              <input id="email" type="text" formControlName="email" placeholder="Enter your email id">
+            </div>
+            <span class="alert-red" *ngIf="email && email.invalid && email.touched">
+              Provide proper email id
+            </span>
+  
+            <!-- form control for username and validating the input-->
+            <div>
+              <label for="userName" >Username: </label>
+              <input id="userName" type="text" formControlName="userName" placeholder="Enter your username">
+            </div>
+            <span *ngIf="getUserName && getUserName.invalid" class="alert-red">Invalid username</span>
+  
+            <!-- form control to add additional data label -->
+            <div>
+              <label>Additional-Data: </label>
+              <input type="text" placeholder="Enter additional data label" formControlName="additionalData">
+            </div>
+            <span *ngIf="additionalData && additionalData.invalid" class="alert-red">Invalid label data and label type</span>
+
+            <!-- getting the label data from the common parent -->
+        <div *ngFor="let i of arr">
+            <app-additional-data (labelDataToParent)="getLabelDataFromChild($event)" [additionalLabelForAdditionalData]="sendLabelToAdditionalComponent"></app-additional-data>
+        </div>
+        <button type="button" class="additionalButton" (click)="fun()">+</button>
+            <!-- display both aditional data label and label data -->
+              <!-- <p><strong>Additional data label: </strong><span class="labelDataBorder">{{additionalDataLabel}}</span></p>
+              <p><strong>Additional label Data: </strong><span class="labelDataBorder">{{labelDataFromChild}}</span></p>
+   -->
+            <div>
+              <!-- submit and reset buttons -->
+              <button class="bts1" type="reset">Reset</button>
+              <button class="bts2" type="submit" [disabled]="!profileForm.valid" >Submit</button> </div>
+            </form>
+    </div>
+    <br/>
+  </div>
+  <!--  -->

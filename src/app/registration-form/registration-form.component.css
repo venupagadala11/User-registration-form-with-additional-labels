@@ -1,0 +1,48 @@
+.main
+{
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+.box div
+{
+    display: flex;
+    justify-content: space-between;
+    width:500px;
+    background-color: beige;
+    padding-bottom: 10px; 
+}
+.box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    
+}
+
+h2{
+    text-align:center;
+}
+.bts1
+{
+    margin-left:30px;
+    cursor: pointer;
+}
+.bts2
+{
+    margin-right: 30px;
+    cursor: pointer;
+}
+.alert-red
+{
+    color:red;
+    display: flex;
+    justify-content: center;
+    font-family: cursive;
+    text-align: center;
+}
+.additionalButton
+{
+    display: flex;
+    justify-content: center;
+}

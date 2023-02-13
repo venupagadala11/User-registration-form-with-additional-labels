@@ -1,0 +1,33 @@
+    <!--component header  -->
+<h3>
+    User details
+ </h3>
+<div class="main">
+     
+    
+    
+    <!-- display all from control data on the UI -->
+       <div class="display-data">
+           <div class="generalInfo">
+               <div ><strong>FirstName:</strong><span class="line">{{dataToDisplay.firstName}} </span></div>
+               <div ><strong>LastName: </strong><span class="line">{{dataToDisplay.lastName}} </span></div>
+               <div ><strong>Age: </strong><span class="line">{{dataToDisplay.age}}</span></div>
+               <div ><strong>Mail id: </strong><span class="line">{{dataToDisplay.email}}</span></div>
+               <div ><strong>Mobile Number: </strong><span class="line">{{dataToDisplay.mobileNumber}}</span> </div>
+               <div ><strong>UserName: </strong><span class="line">{{dataToDisplay.userName}} </span></div>
+           </div>
+           <div class="additionalInfo">
+            <h2>Additional Info</h2>
+               <!-- <div ><span>additional data label: </span><span class="line">{{dataToDisplay.additionalData}} </span></div>
+               <div ><span>Additional data: </span><span class="line">{{labelData}} </span></div> -->
+               <div *ngFor="let item of userAdditionalData">
+                <strong>{{item.dataLabel}} :</strong> {{item.labelData}}
+               </div>
+           </div>
+       </div>
+</div>
+
+<div>
+    
+
+
